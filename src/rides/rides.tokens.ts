@@ -1,0 +1,1 @@
+export const RIDES_JSON_PATH = 'RIDES_JSON_PATH';
