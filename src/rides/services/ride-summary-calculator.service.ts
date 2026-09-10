@@ -25,9 +25,6 @@ interface RideSummaryRow {
   average_distance_meters: number | null;
 }
 
-/**
- * Aggregates duration and distance statistics across every ride.
- */
 @Injectable()
 export class RideSummaryCalculatorService {
   constructor(@InjectDataSource() private readonly dataSource: DataSource) {}

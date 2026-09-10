@@ -4,9 +4,7 @@ import { Processor, WorkerHost } from '@nestjs/bullmq';
 
 import { DEFAULT_QUEUE, LogTestMessageJob } from 'src/queue/queue-names';
 
-/**
- * Logs a message from the worker, so the queue setup can be verified.
- */
+/** Exists so the queue setup can be verified end to end. */
 @Processor(DEFAULT_QUEUE)
 export class LogTestMessageProcessor extends WorkerHost {
   private readonly logger = new Logger(LogTestMessageProcessor.name);

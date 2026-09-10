@@ -31,9 +31,6 @@ interface GbfsResponse {
   data: { stations: GbfsStation[] };
 }
 
-/**
- * Fetches Velo Antwerp station information from the public GBFS feed.
- */
 @Injectable()
 export class VeloAntwerpStationInformationService {
   constructor(

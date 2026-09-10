@@ -38,8 +38,6 @@ interface RideExport {
 }
 
 /**
- * Fetches ride history from a local JSON export of the customer rides.
- *
  * The export writes its checkout and checkin times as "Y-m-d H:i:s" in UTC,
  * with no offset of its own.
  */

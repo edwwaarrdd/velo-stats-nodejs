@@ -11,8 +11,6 @@ import { Ride } from 'src/rides/entities/ride.entity';
 import { Station } from 'src/stations/entities/station.entity';
 
 /**
- * Fetches and caches the weather at a ride's origin station and checkin time.
- *
  * Concurrency is pinned to one so the free Open-Meteo API is never called
  * concurrently.
  */

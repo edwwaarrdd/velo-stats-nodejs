@@ -22,10 +22,6 @@ export interface RideCost {
 
 const MILLISECONDS_PER_DAY = 24 * 60 * 60 * 1000;
 
-/**
- * Works out what the annual subscription costs per ride, and how that compares
- * to paying for the same rides with day or week passes.
- */
 @Injectable()
 export class RideCostCalculatorService {
   public static readonly ANNUAL_SUBSCRIPTION_PRICE_EUR = 58.0;

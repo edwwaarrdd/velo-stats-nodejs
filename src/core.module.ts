@@ -12,10 +12,6 @@ import { RIDES_JSON_PATH } from 'src/rides/rides.tokens';
 import { VELO_ANTWERP_STATION_INFORMATION_URL } from 'src/stations/stations.tokens';
 import { databaseOptions } from 'src/config/data-source';
 
-/**
- * Everything the HTTP app, the CLI and the workers all need: configuration, the
- * database connection, the Redis queue connection and the HTTP client.
- */
 @Global()
 @Module({
   imports: [

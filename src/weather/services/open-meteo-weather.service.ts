@@ -12,9 +12,6 @@ interface OpenMeteoResponse {
 
 @Injectable()
 export class OpenMeteoWeatherService {
-  /**
-   * The biking-relevant hourly variables requested from the archive.
-   */
   public static readonly HOURLY_VARIABLES = [
     'temperature_2m',
     'apparent_temperature',

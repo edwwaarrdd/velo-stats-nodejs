@@ -9,10 +9,6 @@ import { Station } from 'src/stations/entities/station.entity';
 import { StationRoute } from 'src/routing/entities/station-route.entity';
 import { TravelMode } from 'src/routing/enums/travel-mode.enum';
 
-/**
- * Calculates routes between stations, caching results so a route between the
- * same pair of stations and travel mode is only ever calculated once.
- */
 @Injectable()
 export class CachedStationRouteService {
   constructor(

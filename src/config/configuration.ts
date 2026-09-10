@@ -1,10 +1,5 @@
 import { join } from 'node:path';
 
-/**
- * Every environment-driven setting the application reads, resolved once at
- * boot. Mirrors Laravel's config/services.php and the database and queue
- * connection settings.
- */
 export interface AppConfiguration {
   port: number;
   corsAllowedOrigins: string[];

@@ -18,10 +18,6 @@ export interface TestContext {
 
 const TABLES = ['weather_records', 'station_routes', 'rides', 'stations'];
 
-/**
- * Boots the real application against an in-memory database, with the queues
- * replaced by recording fakes.
- */
 export async function createTestContext(): Promise<TestContext> {
   const queues = new Map<QueueName, FakeQueue>(QUEUE_NAMES.map((name) => [name, new FakeQueue(name)]));
 

@@ -3,10 +3,6 @@ import { SerializedWeather, serializeWeather } from 'src/weather/dto/weather.ser
 import { apiDateTime } from 'src/common/api-date-time';
 import { roundMoney } from 'src/common/round';
 
-/**
- * A ride joined with the distance and expected ride time of the cached bike
- * route between its two stations.
- */
 export interface RideWithRoute extends Ride {
   distanceMeters: number | null;
   expectedDurationSeconds: number | null;
@@ -59,8 +55,6 @@ export function serializeRide(ride: RideWithRoute): SerializedRide {
 }
 
 /**
- * The ride's average speed in km/h, or null when the distance is unknown.
- *
  * This divides by the exact ride time rather than the `duration` field, which
  * truncates to whole minutes and so overstates the speed.
  */
@@ -74,9 +68,7 @@ function speedKmh(ride: RideWithRoute): number | null {
   return roundMoney(ride.distanceMeters / 1000 / (seconds / 3600));
 }
 
-/**
- * The ride time to the second, since `duration` is only stored in whole minutes.
- */
+/** `duration` is only stored in whole minutes, so this recomputes to the second. */
 function actualDurationSeconds(ride: RideWithRoute): number | null {
   if (!ride.checkinTime || !ride.checkoutTime) {
     return null;
@@ -85,9 +77,7 @@ function actualDurationSeconds(ride: RideWithRoute): number | null {
   return roundMoney((ride.checkinTime.getTime() - ride.checkoutTime.getTime()) / 1000);
 }
 
-/**
- * Actual minus expected ride time: negative means faster than the router predicted.
- */
+/** Negative means faster than the router predicted. */
 function durationVsExpectedSeconds(ride: RideWithRoute): number | null {
   const actual = actualDurationSeconds(ride);
 

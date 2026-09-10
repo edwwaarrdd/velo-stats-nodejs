@@ -1,7 +1,3 @@
-/**
- * The upstream payloads the tests replay, matching the shapes the real feeds
- * return.
- */
 export function gbfsStation(stationId: string, name: string): Record<string, unknown> {
   return {
     station_id: stationId,

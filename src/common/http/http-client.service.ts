@@ -11,10 +11,6 @@ export class HttpRequestError extends Error {
   }
 }
 
-/**
- * A thin wrapper around fetch that applies the same timeout every upstream call
- * in this application uses, throws on a non-2xx response and decodes JSON.
- */
 @Injectable()
 export class HttpClientService {
   public static readonly TIMEOUT_MS = 10_000;

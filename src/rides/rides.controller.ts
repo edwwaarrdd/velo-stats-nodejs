@@ -16,10 +16,6 @@ export class RidesController {
     private readonly costCalculator: RideCostCalculatorService,
   ) {}
 
-  /**
-   * List every ride, most recent first, with its cached distance, expected ride
-   * time and weather.
-   */
   @Get()
   async index(): Promise<{ results: SerializedRide[] }> {
     const rides = await this.rideList.list();
@@ -27,17 +23,11 @@ export class RidesController {
     return { results: rides.map(serializeRide) };
   }
 
-  /**
-   * Aggregate duration and distance statistics across every ride.
-   */
   @Get('summary')
   summary(): Promise<RideSummary> {
     return this.summaryCalculator.calculate();
   }
 
-  /**
-   * The subscription cost per ride, and how it compares to buying passes.
-   */
   @Get('cost')
   cost(): Promise<RideCost> {
     return this.costCalculator.calculate();

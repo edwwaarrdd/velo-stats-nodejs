@@ -1,10 +1,7 @@
 import { TravelMode } from 'src/routing/enums/travel-mode.enum';
 
 /**
- * The correlated subqueries that resolve a ride's cycling distance and expected
- * ride time from the cached route between its origin and destination stations.
- *
- * Both are written as SQL fragments rather than query-builder calls because
+ * Written as SQL fragments rather than query-builder calls because
  * they correlate against the outer `rides` row, which the builder cannot
  * express without a raw reference anyway.
  */
@@ -13,9 +10,6 @@ export class RideRouteSubquery {
     return RideRouteSubquery.cachedBikeRoute('distance_meters', ridesAlias);
   }
 
-  /**
-   * The ride time the router predicts for the route, in seconds.
-   */
   static expectedDurationSeconds(ridesAlias = 'rides'): string {
     return RideRouteSubquery.cachedBikeRoute('duration_seconds', ridesAlias);
   }

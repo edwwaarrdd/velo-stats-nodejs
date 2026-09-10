@@ -11,10 +11,6 @@ interface RideRouteRow {
   expected_duration_seconds: number | null;
 }
 
-/**
- * Loads every ride together with its weather and the distance and expected ride
- * time of the cached bike route between its two stations.
- */
 @Injectable()
 export class RideListService {
   constructor(@InjectRepository(Ride) private readonly rides: Repository<Ride>) {}

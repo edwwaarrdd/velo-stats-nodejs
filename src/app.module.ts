@@ -8,10 +8,7 @@ import { StationsModule } from 'src/stations/stations.module';
 import { TasksModule } from 'src/tasks/tasks.module';
 import { WeatherModule } from 'src/weather/weather.module';
 
-/**
- * The HTTP application. It registers the queues as a producer but runs no
- * workers; those live in their own processes, started by worker.ts.
- */
+/** Registers the queues as a producer; the workers run in their own processes, from worker.ts. */
 @Module({
   imports: [CoreModule, RidesModule, RoutingModule, StationsModule, TasksModule, WeatherModule],
   controllers: [HealthcheckController],

@@ -8,10 +8,6 @@ import { Ride } from 'src/rides/entities/ride.entity';
 import { WeatherObservation } from 'src/weather/value-objects/weather-observation';
 import { WeatherRecord } from 'src/weather/entities/weather-record.entity';
 
-/**
- * Fetches the weather for a ride's checkin time and origin station, caching
- * results so the same ride's weather is only ever fetched once unless forced.
- */
 @Injectable()
 export class CachedRideWeatherService {
   constructor(

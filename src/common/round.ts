@@ -1,11 +1,6 @@
-/**
- * Rounds monetary and statistical values to the two decimals the API reports.
- */
 export const ROUND_PRECISION = 2;
 
 /**
- * Round to two decimals.
- *
  * This rounds the value the double actually holds rather than the decimal a
  * human would have typed: 15.995, whose nearest double is really
  * 15.99499999999999957, is not a midpoint at all and reports as 15.99. A value

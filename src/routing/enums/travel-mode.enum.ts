@@ -4,8 +4,6 @@ export enum TravelMode {
 }
 
 /**
- * The OSRM instance that actually routes for this mode.
- *
  * The demo server at router.project-osrm.org only hosts the car profile and
  * silently ignores the profile named in the URL, so every mode came back with
  * car driving times. FOSSGIS runs a separate instance per profile, and the

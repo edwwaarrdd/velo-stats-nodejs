@@ -11,9 +11,6 @@ import { Station } from 'src/stations/entities/station.entity';
 import { TravelMode } from 'src/routing/enums/travel-mode.enum';
 
 /**
- * Calculates and caches the cycling distance between a ride's origin and
- * destination stations.
- *
  * Concurrency is pinned to one so the free routing API is never called
  * concurrently.
  */
