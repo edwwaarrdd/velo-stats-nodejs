@@ -14,8 +14,10 @@
     "migration:revert": "typeorm migration:revert -d dist/config/data-source.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "lint": "eslint \"{src,test}/**/*.ts\" --fix",
-    "format": "prettier --write \"{src,test}/**/*.ts\""
+    "lint": "eslint \"{src,test}/**/*.ts\"",
+    "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
+    "format": "prettier --write \"{src,test}/**/*.ts\"",
+    "format:check": "prettier --check \"{src,test}/**/*.ts\""
   },
   "dependencies": {
     "@nestjs/bullmq": "^11.0.2",
